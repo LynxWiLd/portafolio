@@ -9,7 +9,7 @@
 img{max-width:100%}
 @media (prefers-reduced-motion: reduce){
   html{scroll-behavior:auto}
-  .marquee-track,.scroll-hint,.pulse,.caret{animation:none}
+  .marquee-track,.scroll-hint,.caret{animation:none}
   .reveal{opacity:1;transform:none;transition:none}
 }
 html{scroll-behavior:smooth}
@@ -47,8 +47,6 @@ main,header,footer{position:relative;z-index:1}
 /* HERO */
 #hero{padding:84px 24px 40px;position:relative}
 .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
-.badge{display:inline-flex;align-items:center;gap:10px;border:1px solid var(--border);background:var(--panel);padding:8px 16px;border-radius:999px;font-size:.82rem;color:var(--dim)}
-.pulse{width:9px;height:9px;border-radius:50%;background:var(--green)}
 .hello{margin:22px 0 4px;color:var(--dim);font-size:1.05rem}
 h1{font-family:var(--font-d);font-weight:600;font-size:clamp(2.6rem,6vw,4.2rem);line-height:1.05;letter-spacing:0}
 .typing-line{font-family:var(--mono);font-size:clamp(1rem,2.4vw,1.25rem);color:var(--steel);min-height:2em;margin-top:10px}
