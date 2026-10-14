@@ -94,6 +94,12 @@ fetch("data.json")
   })
   .catch(() => {});
 
+// En táctil (sin hover), un toque alterna entre foto retocada y original
+const photoWrap = document.querySelector(".photo-wrap");
+if(photoWrap && matchMedia("(hover: none)").matches){
+  photoWrap.addEventListener("click", () => photoWrap.classList.toggle("show-alt"));
+}
+
 // Particles network
 const cv = document.getElementById("particles"), ctx = cv.getContext("2d");
 let W,H,pts=[];
