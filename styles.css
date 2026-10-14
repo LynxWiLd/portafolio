@@ -118,20 +118,6 @@ h1{font-family:var(--font-d);font-weight:600;font-size:clamp(2.6rem,6vw,4.2rem);
 .p-links a{color:var(--accent);text-decoration:none;font-weight:600;font-size:.9rem}
 .project.hide{display:none}
 
-/* TIMELINE */
-.timeline{display:grid;gap:16px;margin-top:10px;position:relative}
-.timeline::before{content:"";position:absolute;left:7px;top:8px;bottom:8px;width:2px;background:var(--border)}
-.t-item{display:grid;grid-template-columns:16px 1fr;gap:18px;align-items:start}
-.t-dot{width:16px;height:16px;border-radius:50%;background:var(--bg);border:2px solid var(--accent);margin-top:4px}
-.t-body{background:var(--panel);border:1px solid var(--border);border-radius:14px;padding:18px 20px;box-shadow:0 1px 3px rgba(0,0,0,.3)}
-.t-body h3{font-family:var(--font-d);font-weight:600;margin:4px 0}
-.t-body p{color:var(--dim);font-size:.93rem}
-.github-card{margin-top:26px;border:1px solid var(--border);border-radius:var(--r);padding:26px;background:var(--panel);display:grid;grid-template-columns:1fr auto auto;gap:22px;align-items:center;box-shadow:0 1px 3px rgba(0,0,0,.3)}
-.github-card h3{font-family:var(--font-d);font-weight:600}
-.heat{display:grid;grid-template-columns:repeat(26,10px);gap:4px}
-.heat i{width:10px;height:12px;border-radius:3px;background:#2b303c}
-.heat i.on{background:var(--accent)} .heat i.mid{background:#4a5a75} .heat i.hot{background:#8a6f3f}
-
 /* CTA */
 .cta-panel{background:#1b1e27;border:1px solid #3a3f4e;border-radius:24px;padding:clamp(30px,6vw,64px);text-align:center;position:relative;overflow:hidden}
 .cta-panel h2{font-family:var(--font-d);font-weight:600;font-size:clamp(1.9rem,4.5vw,2.9rem);margin:10px 0 12px;color:#fff}
@@ -156,8 +142,6 @@ footer{border-top:1px solid var(--border);padding:26px 0;color:var(--dim);font-s
   .hero-grid,.two-col{grid-template-columns:1fr}
   .cards-3,.stack-grid,.projects-grid{grid-template-columns:1fr 1fr}
   .project.featured{grid-column:span 1}
-  .github-card{grid-template-columns:1fr}
-  .heat{grid-template-columns:repeat(18,10px)}
   .links{display:none}#menu-btn{display:flex}
 }
 @media(max-width:620px){.cards-3,.stack-grid,.projects-grid{grid-template-columns:1fr}.cta-row .btn{width:100%;justify-content:center}}

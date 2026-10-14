@@ -84,17 +84,6 @@ document.querySelectorAll(".filter").forEach(f => f.onclick = () => {
 const track = document.getElementById("marquee-track");
 track.innerHTML += track.innerHTML;
 
-// Fake GitHub heatmap (deterministic)
-const heat = document.getElementById("heat");
-let seed = 7;
-const rnd = () => (seed = (seed*16807)%2147483647)/2147483647;
-for(let i=0;i<26*7;i++){
-  const d = document.createElement("i");
-  const r = rnd();
-  if(r>.82) d.className="on"; else if(r>.6) d.className="mid"; else if(r>.45) d.className="hot";
-  heat.appendChild(d);
-}
-
 // Particles network
 const cv = document.getElementById("particles"), ctx = cv.getContext("2d");
 let W,H,pts=[];
