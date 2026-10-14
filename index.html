@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Facundo Vera — Frontend Developer & SaaS Builder</title>
+<meta name="description" content="Portafolio de Facundo Javier Vera (LynxWiLd). Frontend Developer con foco en UX/UI y construcción de productos SaaS escalables. CEO de Estudio Camaleón." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css" />
+<link rel="icon" href="public/photo.jpeg" />
+</head>
+<body>
+<div id="progress"></div>
+<div id="cursor-glow"></div>
+<canvas id="particles"></canvas>
+<div class="bg-orbs"><div class="orb orb-1"></div><div class="orb orb-2"></div><div class="orb orb-3"></div></div>
+
+<header id="nav">
+  <div class="container nav-inner">
+    <a href="#hero" class="logo"><span class="logo-mark">&lt;/&gt;</span> Portafolio <span class="dot">-</span> Lynxwild</a>
+    <nav class="links">
+      <a href="#sobre-mi">Sobre mí</a>
+      <a href="#stack">Stack</a>
+      <a href="#proyectos">Proyectos</a>
+      <a href="#trayectoria">Trayectoria</a>
+      <a href="#contacto" class="btn btn-small">Contactar</a>
+    </nav>
+    <button id="menu-btn" aria-label="Abrir menú"><span></span><span></span><span></span></button>
+  </div>
+  <div id="mobile-menu">
+    <a href="#sobre-mi">Sobre mí</a>
+    <a href="#stack">Stack</a>
+    <a href="#proyectos">Proyectos</a>
+    <a href="#trayectoria">Trayectoria</a>
+    <a href="#contacto">Contactar</a>
+  </div>
+</header>
+
+<main>
+<!-- HERO -->
+<section id="hero" class="container">
+  <div class="hero-grid">
+    <div class="hero-copy">
+      <div class="badge reveal"><span class="pulse"></span> Disponible para proyectos · Tucumán, AR</div>
+      <p class="hello reveal">Hola, soy</p>
+      <h1 class="reveal">Facundo Javier <span class="gradient">Vera</span></h1>
+      <h2 class="typing-line reveal"><span id="typing"></span><span class="caret">▍</span></h2>
+      <p class="lead reveal">Frontend Developer con foco en <strong>UX/UI</strong> y <strong>SaaS Builder</strong>. CEO de <strong>Estudio Camaleón</strong>, donde construyo productos digitales reales, escalables y centrados en el usuario.</p>
+      <div class="hero-cta reveal">
+        <a href="#proyectos" class="btn btn-primary magnetic">Ver proyectos →</a>
+        <a href="#contacto" class="btn btn-ghost magnetic">Conectemos</a>
+        <a href="public/cv/LinkedInFacundoJavierVera.pdf" class="btn btn-ghost magnetic" download>Descargar CV</a>
+      </div>
+      <div class="hero-meta reveal">
+        <a href="https://github.com/LynxWiLd" target="_blank" rel="noopener">github.com/LynxWiLd</a>
+        <span>·</span>
+        <a href="https://linkedin.com/in/vera-facundo" target="_blank" rel="noopener">in/vera-facundo</a>
+        <span>·</span>
+        <span class="mono">1.234 contribuciones / año</span>
+      </div>
+      <div class="hero-stats reveal">
+        <div><strong><span class="counter" data-target="1234">0</span>+</strong><small>contribuciones en GitHub</small></div>
+        <div><strong><span class="counter" data-target="10">0</span>+</strong><small>proyectos shipped</small></div>
+        <div><strong><span class="counter" data-target="3">0</span>x</strong><small>achievements: Pull Shark, Quickdraw, YOLO</small></div>
+      </div>
+    </div>
+    <div class="hero-visual reveal">
+      <div class="photo-wrap tilt">
+        <img src="public/photo.jpeg" alt="Facundo Javier Vera" fetchpriority="high" decoding="async" />
+        <div class="photo-ring"></div>
+      </div>
+    </div>
+  </div>
+  <a href="#sobre-mi" class="scroll-hint" aria-label="Scroll">↓</a>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee"><div class="marquee-track" id="marquee-track">
+  <span>React</span><i>//</i><span>Next.js</span><i>//</i><span>TypeScript</span><i>//</i><span>Node.js</span><i>//</i><span>Express</span><i>//</i><span>PostgreSQL</span><i>//</i><span>Supabase</span><i>//</i><span>UX/UI</span><i>//</i><span>SaaS Architecture</span><i>//</i><span>IA integrada</span><i>//</i>
+</div></div>
+
+<!-- SOBRE MI -->
+<section id="sobre-mi" class="container section">
+  <p class="kicker reveal">01 — Sobre mí</p>
+  <div class="two-col">
+    <h2 class="title reveal">Construyo productos <span class="gradient">reales, escalables</span> y centrados en el usuario.</h2>
+    <div class="reveal">
+      <p>Desarrollador web enfocado en Frontend y diseño UX/UI, con experiencia creando productos digitales reales. Junto a mi equipo en <strong>Estudio Camaleón</strong> combinamos diseño, lógica de negocio y tecnología para generar impacto real: productos sólidos, iterables y orientados al usuario.</p>
+      <ul class="check-list">
+        <li>Arquitectura de sistemas SaaS multi-tenant</li>
+        <li>Integración de IA en productos digitales</li>
+        <li>Diseño de interfaces + experiencia de usuario</li>
+        <li>De la landing al sistema complejo orientado a negocio</li>
+      </ul>
+      <div class="org-chip">Org: <strong>@EstudioCamaleon</strong> · San Miguel de Tucumán</div>
+    </div>
+  </div>
+  <div class="cards-3">
+    <div class="card reveal tilt"><div class="card-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#9db1cc" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 17l6-6-6-6"/><path d="M12 19h8"/></svg></div><h3>SaaS Builder</h3><p>Gestión de usuarios, paneles admin, operaciones en tiempo real y lógica multi-tenant lista para escalar.</p></div>
+    <div class="card reveal tilt"><div class="card-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#c9a35f" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M3 9h18"/><circle cx="6" cy="6" r=".8" fill="#c9a35f"/></svg></div><h3>UX / UI Focus</h3><p>Interfaces limpias, sistemas de diseño consistentes y flujos que convierten. Diseño que se siente profesional.</p></div>
+    <div class="card reveal tilt"><div class="card-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#6fae8b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z"/></svg></div><h3>Full-Stack pragmático</h3><p>React + Next en el front, Node/Express + Postgres/Supabase atrás. Deploy en Hostinger, Git como base.</p></div>
+  </div>
+</section>
+
+<!-- STACK -->
+<section id="stack" class="container section">
+  <p class="kicker reveal">02 — Tech stack & skills</p>
+  <h2 class="title reveal">Stack que uso para <span class="gradient">shippear</span></h2>
+  <div class="stack-grid">
+    <div class="stack-group reveal"><h3>Frontend & UX/UI</h3><div class="pills"><span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>TypeScript</span><span>React</span><span>Next.js</span><span>UI Design</span><span>UX Research</span></div><div class="bar"><div style="--w:92%"></div></div></div>
+    <div class="stack-group reveal"><h3>Backend & Data</h3><div class="pills"><span>Node.js</span><span>Express.js</span><span>MySQL</span><span>PostgreSQL</span><span>Supabase</span><span>REST APIs</span><span>Auth & RLS</span></div><div class="bar"><div style="--w:84%"></div></div></div>
+    <div class="stack-group reveal"><h3>Tools & Platforms</h3><div class="pills"><span>Git / GitHub</span><span>Hostinger</span><span>Vercel</span><span>Figma</span><span>AI Integration</span><span>SaaS Architecture</span></div><div class="bar"><div style="--w:88%"></div></div></div>
+  </div>
+</section>
+
+<!-- PROYECTOS -->
+<section id="proyectos" class="container section">
+  <p class="kicker reveal">03 — Proyectos destacados</p>
+  <div class="section-head">
+    <h2 class="title reveal">Trabajo que habla <span class="gradient">por sí solo</span></h2>
+    <div class="filters reveal">
+      <button class="filter active" data-f="all">Todos</button>
+      <button class="filter" data-f="saas">SaaS</button>
+      <button class="filter" data-f="frontend">Frontend</button>
+      <button class="filter" data-f="fullstack">Full-Stack</button>
+    </div>
+  </div>
+  <div class="projects-grid" id="projects-grid">
+    <article class="project featured reveal tilt" data-cat="saas fullstack">
+      <div class="p-top"><span class="tag">Proyecto principal</span><span class="tag ghost">SaaS · Multi-tenant</span></div>
+      <h3>Camaleón SaaS — Sistema multi-tenant</h3>
+      <p>Sistema escalable orientado a negocios: gestión de usuarios, lógica multi-tenant, panel administrativo y operaciones en tiempo real. Construido con mi equipo.</p>
+      <div class="pills small"><span>React</span><span>Node</span><span>PostgreSQL</span><span>Supabase</span></div>
+      <div class="p-links"><a href="https://github.com/Estudio-Camaleon" target="_blank" rel="noopener">Ver org →</a><span class="mono dim">35 + 32 + 22 commits oct-2026</span></div>
+    </article>
+    <article class="project reveal tilt" data-cat="saas frontend">
+      <div class="p-top"><span class="tag">Estudio</span><span class="tag ghost">Plataforma</span></div>
+      <h3>Estudio Camaleón — Plataforma</h3>
+      <p>Estudio de desarrollo: desde landing pages de alto impacto hasta sistemas complejos orientados a negocio.</p>
+      <div class="pills small"><span>Next.js</span><span>UX/UI</span><span>SEO</span></div>
+      <div class="p-links"><a href="https://github.com/Estudio-Camaleon" target="_blank" rel="noopener">Ver org →</a></div>
+    </article>
+    <article class="project reveal tilt" data-cat="frontend">
+      <div class="p-top"><span class="tag">Colaboración</span><span class="tag ghost">Evento provincial</span></div>
+      <h3>Plataforma Evento Geek</h3>
+      <p>Web para evento provincial: visualización de actividades, artistas y contenido dinámico.</p>
+      <div class="pills small"><span>JavaScript</span><span>CSS</span><span>Contenido dinámico</span></div>
+    </article>
+    <article class="project reveal tilt" data-cat="fullstack">
+      <div class="p-top"><span class="tag">MERN</span><span class="tag ghost">Streaming</span></div>
+      <h3>MERN Music App</h3>
+      <p>Aplicación full-stack tipo streaming desarrollada como proyecto integral.</p>
+      <div class="pills small"><span>Mongo</span><span>Express</span><span>React</span><span>Node</span></div>
+    </article>
+    <article class="project reveal tilt" data-cat="fullstack">
+      <div class="p-top"><span class="tag">Gestión</span><span class="tag ghost">Front + Back</span></div>
+      <h3>Sistema Gestión Gimnasio</h3>
+      <p>Sistema de gestión para gimnasio: frontend + backend separados, operaciones CRUD y panel de control.</p>
+      <div class="pills small"><span>JavaScript</span><span>Node</span></div>
+      <div class="p-links"><a href="https://github.com/PCruzado/ProyectoGimnasio-FrontEnd" target="_blank" rel="noopener">Front →</a><a href="https://github.com/PCruzado/ProyectoGimnasio-BackEnd" target="_blank" rel="noopener">Back →</a></div>
+    </article>
+    <article class="project reveal tilt" data-cat="frontend">
+      <div class="p-top"><span class="tag">Streaming</span><span class="tag ghost">HTML · Grupal</span></div>
+      <h3>LynxStream Web</h3>
+      <p>Servicio de streaming — proyecto de fin de módulo grupal. Maquetado y experiencia de navegación.</p>
+      <div class="pills small"><span>HTML</span><span>CSS</span><span>JS</span></div>
+    </article>
+    <article class="project reveal tilt" data-cat="frontend fullstack">
+      <div class="p-top"><span class="tag">Lógica</span><span class="tag ghost">JS</span></div>
+      <h3>JS Logic Pro + E-commerce + ShareLinks</h3>
+      <p>Templates y utilidades productivas: lógica JS, e-commerce template (front/back) y app ShareLinks — 35 commits recientes.</p>
+      <div class="pills small"><span>JavaScript</span><span>E-commerce</span><span>Links</span></div>
+    </article>
+  </div>
+</section>
+
+<!-- TRAYECTORIA -->
+<section id="trayectoria" class="container section">
+  <p class="kicker reveal">04 — Trayectoria</p>
+  <h2 class="title reveal">De dev a <span class="gradient">CEO constructor</span></h2>
+  <div class="timeline">
+    <div class="t-item reveal"><div class="t-dot"></div><div class="t-body"><span class="mono dim">Ahora · 2026</span><h3>CEO — Estudio Camaleón</h3><p>Lidero equipo que desarrolla SaaS multi-tenant y soluciones web modernas. Foco en producto, negocio y usuario.</p></div></div>
+    <div class="t-item reveal"><div class="t-dot"></div><div class="t-body"><span class="mono dim">2025 — 2026</span><h3>SaaS Multi-Tenant en producción</h3><p>Arquitectura escalable, panel admin, tiempo real. Ritmo alto: 80+ commits/mes entre front y back.</p></div></div>
+    <div class="t-item reveal"><div class="t-dot"></div><div class="t-body"><span class="mono dim">2024 — 2025</span><h3>Proyectos full-stack & colaboraciones</h3><p>MERN Music App, Evento Geek provincial, sistema gimnasio, LynxStream. Pull Shark ×2 · Quickdraw · YOLO.</p></div></div>
+  </div>
+  <div class="github-card reveal">
+    <div><h3>Actividad en GitHub</h3><p class="dim">1.234 contribuciones en el último año. Ritmo constante, productos reales.</p></div>
+    <div class="heat" id="heat" aria-hidden="true"></div>
+    <a class="btn btn-ghost" href="https://github.com/LynxWiLd" target="_blank" rel="noopener">Ver GitHub →</a>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section id="contacto" class="container section">
+  <div class="cta-panel reveal">
+    <p class="kicker light">05 — Contacto</p>
+    <h2>¿Construimos algo <span class="gradient">grande</span> juntos?</h2>
+    <p>Abierto a proyectos freelance, colaboraciones y roles frontend / producto. Respondo rápido.</p>
+    <div class="cta-row">
+      <a class="btn btn-primary magnetic" href="mailto:facundovera647@gmail.com">facundovera647@gmail.com</a>
+      <a class="btn btn-ghost light magnetic" href="https://linkedin.com/in/vera-facundo" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn btn-ghost light magnetic" href="https://github.com/LynxWiLd" target="_blank" rel="noopener">GitHub</a>
+      <a class="btn btn-primary magnetic" href="public/cv/LinkedInFacundoJavierVera.pdf" download>Descargar CV</a>
+    </div>
+    <p class="mono dim small">Construyendo productos reales, escalables y centrados en el usuario.</p>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="container foot">
+    <span>© 2026 Facundo Vera · LynxWiLd · San Miguel de Tucumán</span>
+    <a href="#hero" id="to-top">Volver arriba ↑</a>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
