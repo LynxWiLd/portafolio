@@ -94,10 +94,20 @@ fetch("data.json")
   })
   .catch(() => {});
 
-// En táctil (sin hover), un toque alterna entre foto retocada y original
+// En táctil (sin hover), la foto alterna sola cada 4s mientras esté visible.
+// Con click se alterna manualmente (p. ej. con reduced-motion, sin ciclo).
 const photoWrap = document.querySelector(".photo-wrap");
-if(photoWrap && matchMedia("(hover: none)").matches){
-  photoWrap.addEventListener("click", () => photoWrap.classList.toggle("show-alt"));
+if(photoWrap){
+  const noHover = matchMedia("(hover: none)").matches;
+  const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if(noHover && !reduceMotion){
+    let timer = null;
+    const start = () => { if(!timer) timer = setInterval(() => photoWrap.classList.toggle("show-alt"), 4000); };
+    const stop = () => { clearInterval(timer); timer = null; };
+    new IntersectionObserver(es => es.forEach(e => e.isIntersecting ? start() : stop())).observe(photoWrap);
+  } else if(noHover){
+    photoWrap.addEventListener("click", () => photoWrap.classList.toggle("show-alt"));
+  }
 }
 
 // Particles network
