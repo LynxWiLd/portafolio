@@ -84,6 +84,16 @@ document.querySelectorAll(".filter").forEach(f => f.onclick = () => {
 const track = document.getElementById("marquee-track");
 track.innerHTML += track.innerHTML;
 
+// Contribuciones en vivo desde data.json (lo actualiza la Action semanal)
+fetch("data.json")
+  .then(r => { if(!r.ok) throw 0; return r.json(); })
+  .then(d => {
+    const n = document.getElementById("contribuciones");
+    if(n && d.contributions != null)
+      n.textContent = String(d.contributions).replace(/\B(?=(\d{3})+(?!\d))/g, ".") + " contribuciones / año";
+  })
+  .catch(() => {});
+
 // Particles network
 const cv = document.getElementById("particles"), ctx = cv.getContext("2d");
 let W,H,pts=[];
