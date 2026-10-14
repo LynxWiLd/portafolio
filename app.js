@@ -49,8 +49,9 @@ const mm = document.getElementById("mobile-menu");
 btn.onclick = () => mm.classList.toggle("open");
 mm.querySelectorAll("a").forEach(a => a.onclick = () => mm.classList.remove("open"));
 
-// Tilt + spotlight
-document.querySelectorAll(".tilt").forEach(card => {
+// Tilt + spotlight (solo puntero fino: en táctil el arrastre del scroll lo haría temblar)
+const finePointer = matchMedia("(hover: hover) and (pointer: fine)").matches;
+if(finePointer) document.querySelectorAll(".tilt").forEach(card => {
   card.addEventListener("pointermove", e => {
     const r = card.getBoundingClientRect();
     const x = (e.clientX-r.left)/r.width-.5, y = (e.clientY-r.top)/r.height-.5;
@@ -61,8 +62,8 @@ document.querySelectorAll(".tilt").forEach(card => {
   card.addEventListener("pointerleave", () => card.style.transform = "");
 });
 
-// Magnetic buttons
-document.querySelectorAll(".magnetic").forEach(b => {
+// Magnetic buttons (solo puntero fino, por el mismo motivo)
+if(finePointer) document.querySelectorAll(".magnetic").forEach(b => {
   b.addEventListener("pointermove", e => {
     const r = b.getBoundingClientRect();
     b.style.transform = `translate(${(e.clientX-r.left-r.width/2)*.12}px,${(e.clientY-r.top-r.height/2)*.18}px)`;
@@ -101,8 +102,16 @@ if(photoWrap){
   const noHover = matchMedia("(hover: none)").matches;
   const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
   if(noHover && !reduceMotion){
-    let timer = null;
-    const start = () => { if(!timer) timer = setInterval(() => photoWrap.classList.toggle("show-alt"), 4000); };
+    let timer = null, scrolling = false, scrollTimer = null;
+    // Pausa el ciclo mientras el usuario se está deslizando: el cambio
+    // a mitad del scroll es lo que se veía raro.
+    addEventListener("scroll", () => {
+      scrolling = true;
+      clearTimeout(scrollTimer);
+      scrollTimer = setTimeout(() => scrolling = false, 1200);
+    }, {passive:true});
+    const flip = () => { if(!scrolling) photoWrap.classList.toggle("show-alt"); };
+    const start = () => { if(!timer) timer = setInterval(flip, 4000); };
     const stop = () => { clearInterval(timer); timer = null; };
     new IntersectionObserver(es => es.forEach(e => e.isIntersecting ? start() : stop())).observe(photoWrap);
   } else if(noHover){
