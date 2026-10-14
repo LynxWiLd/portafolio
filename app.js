@@ -102,15 +102,12 @@ if(photoWrap){
   const noHover = matchMedia("(hover: none)").matches;
   const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
   if(noHover && !reduceMotion){
-    let timer = null, scrolling = false, scrollTimer = null;
+    // Marca temporal en vez de flag: el tiempo siempre avanza, no puede atascarse.
+    let timer = null, lastScroll = 0;
     // Pausa el ciclo mientras el usuario se está deslizando: el cambio
     // a mitad del scroll es lo que se veía raro.
-    addEventListener("scroll", () => {
-      scrolling = true;
-      clearTimeout(scrollTimer);
-      scrollTimer = setTimeout(() => scrolling = false, 1200);
-    }, {passive:true});
-    const flip = () => { if(!scrolling) photoWrap.classList.toggle("show-alt"); };
+    addEventListener("scroll", () => { lastScroll = Date.now(); }, {passive:true});
+    const flip = () => { if(Date.now() - lastScroll > 1200) photoWrap.classList.toggle("show-alt"); };
     const start = () => { if(!timer) timer = setInterval(flip, 4000); };
     const stop = () => { clearInterval(timer); timer = null; };
     new IntersectionObserver(es => es.forEach(e => e.isIntersecting ? start() : stop())).observe(photoWrap);
